@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load account %} <!-- Загружаем тег который позволит получить нам ссылку на подтверждение -->
+    <h1>Здравствуйте {{ user.username }}! Мы рады, что вы зарегистрировались на NewsPortal </h1>
+    <h3>Пожалуйста пройдите <a href="{{ activate_url }}">по этой ссылке</a> чтобы активировать ваш аккаунт!</h3>
+    <p align="left">
+        Ваш NewsPortal
+    </p>
+     <!-- Вставляем ссылку на активацию -->
+</body>
+</html>

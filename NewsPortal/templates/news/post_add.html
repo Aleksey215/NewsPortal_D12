@@ -1,0 +1,87 @@
+<!--Данный файл отображает страницу создания нового поста-->
+
+{% extends 'default.html' %}
+
+
+{% block title %}
+Post add
+{% endblock title %}
+
+
+{% block content %}
+<h3>Публикация</h3>
+<hr>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <p align="left">
+                <b>Заголовок &nbsp </b>
+                </p>
+            </td>
+            <td>
+                <p align="left">
+                {{ form.title }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="left">
+                <b>Содержание</b>
+                </p>
+            </td>
+            <td>
+                <p align="left">
+                {{ form.text }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="left">
+                <b>Автор</b>
+                </p>
+            </td>
+            <td>
+                <p align="left">
+                {{ form.author }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="left">
+                <b>Вид</b>
+                </p>
+            </td>
+            <td>
+                <p align="left">
+                {{ form.view }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p align="left">
+                <b>Категория</b>
+                </p>
+            </td>
+             <td>
+                <p align="left">
+                {{ form.post_category }}
+                </p>
+            </td>
+        </tr>
+    </table>
+    <br>
+
+    <p align="left">
+
+    <input type="submit" value="Добавить публикацию">
+    </p>
+</form>
+<br>
+{% endblock content %}

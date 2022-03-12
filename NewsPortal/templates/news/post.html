@@ -1,0 +1,62 @@
+{% extends 'default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+<h1>Новость ({{ post }}) </h1>
+<table>
+    <tr>
+        <td>
+            Автор публикации
+        </td>
+        <td>
+            Вид публикации
+        </td>
+        <td>
+            Время публикации
+        </td>
+        <td>
+            Категория
+        </td>
+        <td>
+            Заголовок публикации
+        </td>
+        <td>
+            Текст публикации
+        </td>
+        <td>
+            Рейтинг публикации
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{ post.author }}
+        </td>
+        <td>
+            {{ post.get_view_display }}
+        </td>
+        <td>
+            {{ post.time_of_creation }}
+        </td>
+        <td>
+            <!--В цикле выводим категории из списка-->
+            {% for category in post.post_category.all %}
+            {{ category }}
+            {% endfor %}
+        </td>
+        <td>
+            {{ post.title|censor }}
+        </td>
+        <td>
+            {{ post.text|censor }}
+        </td>
+        <td>
+            {{ post.post_rating }}
+        </td>
+    </tr>
+</table>
+{% endblock content %}
