@@ -131,12 +131,24 @@ WSGI_APPLICATION = 'NewsPortal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# Прошлая база данных
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
@@ -251,4 +263,63 @@ CACHES = {
 # что username теперь необязательный. Следующий параметр указывает, что аутентификация будет происходить
 # посредством электронной почты. Напоследок мы указываем, что верификация почты отсутствует. Обычно на почту
 # отправляется подтверждение аккаунта, после подтверждения которого восстанавливается полная функциональность
-# учетной записи. Для тестового примера нам не обязательно это делать.
+# учетной записи. Для тестового примера нам необязательно это делать.
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_logger': False,  # вкл/выкл Django DEBUG (лучше всегда писать - False)
+    # указываем логгер
+    'loggers': {
+        'django': {
+            'handlers': ['news'],
+            'level': 'DEBUG',
+        },
+    },
+    'handlers': {
+        'news': {
+            'leve': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+}
+
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'style' : '{',
+#     'formatters': {
+#         'simple': {
+#             'format': '{levelname} {message}'
+#         },
+#     },
+#     'filters': {
+#         'require_debug_true': {
+#             '()': 'django.utils.log.RequireDebugTrue',
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'INFO',
+#             'filters': ['require_debug_true'],
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'simple'
+#         },
+#         'mail_admins': {
+#             'level': 'ERROR',
+#             'class': 'django.utils.log.AdminEmailHandler'
+#         }
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'propagate': True,
+#         },
+#         'django.request': {
+#             'handlers': ['mail_admins'],
+#             'level': 'ERROR',
+#             'propagate': False,
+#         }
+#     }
+# }
