@@ -21,5 +21,3 @@ def my_filter(value):
             result.append(word)  # иначе просто добавляем слово не меняя
     return " ".join(result)
 
-
-print(my_filter(input('Введите текст: ')))
