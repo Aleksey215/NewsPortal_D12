@@ -14,6 +14,7 @@ Django поддерживает несколько разных видов пр�
 3) Function-based views — представления в виде функций.
 
 """
+from django.http import HttpResponse
 from django.shortcuts import render, reverse, redirect
 # импорт дженериков для представлений.
 # дженерики - это элементы, которые позволяют визуализировать ин-ию из БД в браузере, при помощи HTML
@@ -22,6 +23,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
+
 
 # Импорт пользовательских элементов:
 # модели - передают ин-ию из БД

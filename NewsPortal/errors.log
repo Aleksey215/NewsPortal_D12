@@ -1,0 +1,432 @@
+2022-03-31 20:30:27,800 ERROR Internal Server Error: / /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 58: 'get_available_languages', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f04fde85380>)
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 69, in render_flatpage
+    return HttpResponse(template.render({'flatpage': f}, request))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/templatetags/cache.py", line 78, in do_cache
+    nodelist = parser.parse(('endcache',))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 58: 'get_available_languages', expected 'endcache'. Did you forget to register or load this tag?
+2022-03-31 20:30:27,801 ERROR "GET / HTTP/1.1" 500 190634 /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-03-31 20:33:33,348 ERROR Internal Server Error: / /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 59: 'get_available_languages', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f04fe782980>)
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 69, in render_flatpage
+    return HttpResponse(template.render({'flatpage': f}, request))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/templatetags/cache.py", line 78, in do_cache
+    nodelist = parser.parse(('endcache',))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 59: 'get_available_languages', expected 'endcache'. Did you forget to register or load this tag?
+2022-03-31 20:33:33,349 ERROR "GET / HTTP/1.1" 500 190630 /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-03-31 20:36:35,964 ERROR Internal Server Error: / /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 59: 'get_available_languages', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7fc973fe4380>)
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 69, in render_flatpage
+    return HttpResponse(template.render({'flatpage': f}, request))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/templatetags/cache.py", line 78, in do_cache
+    nodelist = parser.parse(('endcache',))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 59: 'get_available_languages', expected 'endcache'. Did you forget to register or load this tag?
+2022-03-31 20:36:35,965 ERROR "GET / HTTP/1.1" 500 190595 /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-03-31 20:36:36,842 ERROR Internal Server Error: / /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 59: 'get_available_languages', expected 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7fc973fa0740>)
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 69, in render_flatpage
+    return HttpResponse(template.render({'flatpage': f}, request))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/templatetags/cache.py", line 78, in do_cache
+    nodelist = parser.parse(('endcache',))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 59: 'get_available_languages', expected 'endcache'. Did you forget to register or load this tag?
+2022-03-31 20:36:36,843 ERROR "GET / HTTP/1.1" 500 190595 /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-03-31 20:39:29,955 ERROR Internal Server Error: / /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 60: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7fc978906100>)
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 69, in render_flatpage
+    return HttpResponse(template.render({'flatpage': f}, request))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 531, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 60: 'get_available_languages'. Did you forget to register or load this tag?
+2022-03-31 20:39:29,957 ERROR "GET / HTTP/1.1" 500 176224 /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-03-31 20:48:17,884 ERROR Internal Server Error: / /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 60: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7faaa299cf00>)
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 69, in render_flatpage
+    return HttpResponse(template.render({'flatpage': f}, request))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 531, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 60: 'get_available_languages'. Did you forget to register or load this tag?
+2022-03-31 20:48:17,888 ERROR "GET / HTTP/1.1" 500 176224 /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-03-31 20:48:22,435 ERROR Internal Server Error: / /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 60: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7faaa295aac0>)
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 69, in render_flatpage
+    return HttpResponse(template.render({'flatpage': f}, request))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 531, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 60: 'get_available_languages'. Did you forget to register or load this tag?
+2022-03-31 20:48:22,436 ERROR "GET / HTTP/1.1" 500 176224 /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2022-03-31 20:52:55,056 ERROR Internal Server Error: / /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 60: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x7fcbbb3e6200>)
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/middleware.py", line 12, in process_response
+    return flatpage(request, request.path_info)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 45, in flatpage
+    return render_flatpage(request, f)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/contrib/flatpages/views.py", line 69, in render_flatpage
+    return HttpResponse(template.render({'flatpage': f}, request))
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/template/base.py", line 531, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 60: 'get_available_languages'. Did you forget to register or load this tag?
+2022-03-31 20:52:55,057 ERROR "GET / HTTP/1.1" 500 176224 /home/aleksey/projects/Skillfactory/Django_D2/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None

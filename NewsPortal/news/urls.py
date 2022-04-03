@@ -5,18 +5,19 @@
 Главный файл забирает все адреса из этого файла, чтобы выстроить полный путь
 """
 
-from django.urls import path
+from django.urls import path, include
 # Импортируем представления, написанные в файле "views.py"
 from .views import PostList, PostsSearch, PostDetailView, \
     PostCreateView, PostUpdateView, PostDeleteView, \
     CategoryList, add_subscribe, del_subscribe, CategoryDetail
 # Д8 кэширование
 from django.views.decorators.cache import cache_page
-
+from django.contrib import admin
 # создаем список всех url-адресов данного приложения
 # мысленно добавляем к каждому адресу: posts/ из главного файла
 # в переменной name указываем имя шаблона для визуализации
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')), # подключаем встроенные эндопинты для работы с локализацией
     # D8 добавил кеширование
     # по пустому адресу мы получаем список публикаций как представление
     path('', cache_page(60)(PostList.as_view()), name='posts'),  # т. к. сам по себе это класс,

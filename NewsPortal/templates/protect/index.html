@@ -5,6 +5,8 @@
 <!--Наследование от главного шаблона-->
 {% extends "default.html" %}
 
+{% load i18n %}
+
 <!--Описание содержания шаблона-->
 {% block content %}
 <h2>Пользователь "{{request.user.username}}" - статус {% if is_not_authors %} ПОЛЬЗОВАТЕЛЬ {% endif %} {% if is_authors %} АВТОР {% endif %}</h2>

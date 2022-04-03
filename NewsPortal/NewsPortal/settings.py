@@ -40,6 +40,8 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 INSTALLED_APPS = [
     # Список приложений созданных по умолчанию
+    'modeltranslation',  # приложение для перевода моделей (обязательно пишется перед admin)
+    
     'django.contrib.admin',
     'django.contrib.auth',  # приложение поддержки авторизации
     'django.contrib.contenttypes',
@@ -81,6 +83,9 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    'django.middleware.locale.LocaleMiddleware',  # для модуля Д14.3 (важна последовательность, именно так!!!!!)
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -173,7 +178,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'Asia/Vladivostok'
 # TIME_ZONE = 'UTC'
@@ -183,6 +188,16 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOCALE_PATH = [
+    os.path.join(BASE_DIR, 'locale')
+]
+
+LANGUAGES = [
+    ('ru', 'Русский'),
+    ('en', 'English'),
+]
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -218,7 +233,7 @@ EMAIL_HOST = 'smtp.yandex.ru'  # адрес сервера Яндекс-почт
 EMAIL_PORT = 465  # порт smtp сервера тоже одинаковый всегда
 EMAIL_HOST_USER = 'kalosha21541'  # имя пользователя, например, если почта user@yandex.ru, то надо
 # писать user, иными словами, это всё то что идёт до собачки (@)
-EMAIL_HOST_PASSWORD = 'Rfkjifff21541' # пароль от почты
+EMAIL_HOST_PASSWORD = 'Rfkjifff21541'  # пароль от почты
 EMAIL_USE_SSL = True  # Яндекс использует ssl, включать обязательно, защита от хакеров
 
 SERVER_EMAIL = 'kalosha21541@yandex.ru'  # это будет у нас вместо аргумента FROM в массовой рассылке
@@ -238,7 +253,7 @@ APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
 
 
 CELERY_BROKER_URL = 'redis://localhost:6379'  # указывает на URL брокера сообщений (Redis).
-                                              # По умолчанию он находится на порту 6379.
+# По умолчанию он находится на порту 6379.
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'  # указывает на хранилище результатов выполнения задач.
 CELERY_ACCEPT_CONTENT = ['application/json']  # допустимый формат данных.
 CELERY_TASK_SERIALIZER = 'json'  # метод сериализации задач.
@@ -254,8 +269,6 @@ CACHES = {
         'TIMEOUT': 30,  # время, которое будет храниться кэш
     }
 }
-
-
 
 
 # (1)

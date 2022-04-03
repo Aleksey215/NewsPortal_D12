@@ -18,6 +18,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     # адрес админки
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
