@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 {% load i18n %}
+{% load tz %}
+
 
 <html lang="en">
     <head>
@@ -18,7 +20,7 @@
     </head>
     <body>
         <!-- Responsive navbar-->
-        {% cache 60 navbar %}  <!-- Кэширование навигации -->
+        {% cache 5 navbar %}  <!-- Кэширование навигации -->
         {% endcache %}
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
@@ -54,6 +56,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="http://127.0.0.1:8000/admin">AdminPanel</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/posts/index/">Index</a>
+                        </li>
 
                         <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %}
                             <!-- Не забываем по csrf_token для POST запросов -->
@@ -77,11 +82,31 @@
                 </div>
             </div>
         </nav>
-
+        <style>
+        body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} darkcyan {% else %} powderblue {% endif %};}
+        </style>
         <!-- Page content-->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    {% get_current_timezone as TIME_ZONE %}
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <label for="timezone">Time zone:</label>
+                        <select name="timezone">
+                            {% for tz in timezones %}
+                            <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="Set">
+                    </form>
+                    {{ TIME_ZONE }}
+                    {{ current_time|timezone:TIME_ZONE }} <!-- Отображаем время в выбранном часовом поясе  -->
+                    {% for model in models %}
+                    <div class="model-class">
+                        {{ model.name }}
+                    </div>
+                    {% endfor %}
                     {% block content %}
                     {{ flatpage.content }}
                     {% endblock content %}

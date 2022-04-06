@@ -9,7 +9,7 @@ from django.urls import path, include
 # Импортируем представления, написанные в файле "views.py"
 from .views import PostList, PostsSearch, PostDetailView, \
     PostCreateView, PostUpdateView, PostDeleteView, \
-    CategoryList, add_subscribe, del_subscribe, CategoryDetail
+    CategoryList, add_subscribe, del_subscribe, CategoryDetail, Index
 # Д8 кэширование
 from django.views.decorators.cache import cache_page
 from django.contrib import admin
@@ -17,6 +17,7 @@ from django.contrib import admin
 # мысленно добавляем к каждому адресу: posts/ из главного файла
 # в переменной name указываем имя шаблона для визуализации
 urlpatterns = [
+    path('index/', Index.as_view(), name='Index'),
     path('i18n/', include('django.conf.urls.i18n')), # подключаем встроенные эндопинты для работы с локализацией
     # D8 добавил кеширование
     # по пустому адресу мы получаем список публикаций как представление

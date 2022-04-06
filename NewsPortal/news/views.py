@@ -19,10 +19,12 @@ from django.shortcuts import render, reverse, redirect
 # импорт дженериков для представлений.
 # дженерики - это элементы, которые позволяют визуализировать ин-ию из БД в браузере, при помощи HTML
 from django.template.loader import render_to_string  # импортируем функцию, которая срендерит наш html в текст
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView, View
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
+from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
+from django.utils import timezone  # для выбора времени Д14.5
 
 
 # Импорт пользовательских элементов:
@@ -36,6 +38,24 @@ from .filters import PostFilter
 from .forms import PostForm
 # Задача отправки письма подписчикам при добавлении статьи в выбранной категории
 from .tasks import email_task
+
+import pytz  # импортируем стандартный модуль для работы с часовыми поясами
+
+
+class Index(View):
+    def get(self, request):
+
+        context = {
+            'current_time': timezone.now(),
+            'timezones': pytz.common_timezones  # добавляем в контекст все доступные часовые пояса
+        }
+
+        return HttpResponse(render(request, 'index.html', context))
+
+    #  по пост-запросу будем добавлять в сессию часовой пояс, который и будет обрабатываться написанным нами ранее middleware
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('/posts/index/')
 
 
 # Класс-представление для отображения списка постов

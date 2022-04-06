@@ -1,5 +1,5 @@
 {% extends 'default.html' %}
-
+{% load tz %}
 {% load i18n %}
 
 {% block title %}
@@ -7,7 +7,11 @@ Categories
 {% endblock title %}
 
 {% block content %}
-<h1>Категории публикаций</h1>
+<h1>{% trans "Категории публикаций" %}</h1>
+
+<style>
+    body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} darkcyan {% else %} powderblue {% endif %};}
+</style>
   <hr>
 <table>
     <thead>
@@ -19,14 +23,16 @@ Categories
     </th>
     </thead>
     {% for category in categories %}
+    <div class="model-class">
     <tr>
         <td>
             {{category.name}} &nbsp <br>
         </td>
         <td>
-            <a href="{% url 'category_subscription' category.id %}">Выбрать категорию</a><br>
+            <a href="{% url 'category_subscription' category.id %}" style="color:#FF0000">Выбрать категорию</a><br>
         </td>
     </tr>
+    </div>
     {% endfor %}
 </table>
 {% endblock content %}

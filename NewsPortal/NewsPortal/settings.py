@@ -85,6 +85,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
 
     'django.middleware.locale.LocaleMiddleware',  # для модуля Д14.3 (важна последовательность, именно так!!!!!)
+    'news.middlewares.TimezoneMiddleware',  # импортирую свой мидл для Д14.5 выбора времени (важна последовательность)
 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
