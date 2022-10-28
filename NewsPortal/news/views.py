@@ -225,7 +225,7 @@ def sending_emails_to_subscribers(instance):
                                          'text': sub_text[:50],
                                          'post': instance})
         # функция для таски, передаем в нее все что нужно для отправки подписчикам письма
-        email_task(subscriber_username, subscriber_useremail, html_content)
+        email_task.delay(subscriber_username, subscriber_useremail, html_content)
     return redirect('/posts/')
 
 # Реализация отправки письма подписчикам при создании нового поста в их категории
