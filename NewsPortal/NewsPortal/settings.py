@@ -13,6 +13,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os.path
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv()
+env_path = Path('NewsPortal')/'.env'
+load_dotenv(dotenv_path=env_path)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # Постройте пути внутри проекта следующим образом: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -71,6 +77,7 @@ INSTALLED_APPS = [
     # Необходимо для реализации регистрации через провайдер "Google"
     'allauth.socialaccount.providers.google',
     'django_apscheduler',
+    'crispy_forms',
 ]
 
 DEFAULT_FROM_EMAIL = 'kalosha21541@yandex.ru'  # здесь указываем ПОЛНУЮ почту, с которой будут отправляться письма
